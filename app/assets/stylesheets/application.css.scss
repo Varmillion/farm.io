@@ -1,0 +1,163 @@
+
+/*
+ *= require 'masonry/transitions'
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+*/
+ 
+ 
+@import "bootstrap";
+@import "font-awesome";
+
+
+body {
+	background: #E9E9E9;
+}
+
+h1, h2, h4, h5, h6 {
+font-weight: 100;
+}
+
+nav {
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+	.navbar-brand {
+	a {
+	  color: rgb(20,80,100);
+	  font-family: Purisa;
+	  font-weight:bold;
+	  &:hover {
+	    text-decoration: none;
+	  }
+	}
+  }
+}
+
+#ads {
+	margin: 0 auto;
+	width:100%;
+	.box {
+	  margin: 10px;
+	  width: 350px;
+	  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+	  border-radius: 7px;
+	  text-align: center;
+	  img {
+	    max-width: 100%;
+	    margin-top: 10%;
+	    margin-left: 0px;
+	    height: auto;
+	  }
+	  h2 {
+	    font-size: 22px;
+	    margin: 0;
+	    padding: 25px 10px;
+	    a {
+	      font-family: Purisa;
+	      color: #474747;
+	    }
+	  }
+	  .user {
+	    font-size: 12px;
+	    border-top: 1px solid #EAEAEA;
+	    padding: 15px;
+	    margin: 0;
+      }
+    }
+}
+
+#edit_page {
+	.current_image {
+	  img {
+	    display: block;
+	    margin: 20px 0;
+	}
+  }
+}
+
+#ad_show {
+    .panel-heading {
+	  padding: 0;
+	}
+	.ad_image {
+	  img {
+	    max-width: 100%;
+	    width: 100%;
+	    display: block;
+	    margin: 0 auto;
+
+	  }
+	}
+	.panel-body {
+	  padding: 35px;
+	  h1 {
+	    margin: 0 0 10px 0;
+	  }
+	  .description {
+	    color: #868686;
+	    line-height: 1.75;
+	    margin: 0;
+	  }
+	}
+	.panel-footer {
+	  padding: 20px 35px;
+	  p {
+	    margin: 0;
+	  }
+	  .user {
+	    padding-top: 8px;
+    }
+  }
+}
+
+textarea {
+	min-height: 200px;
+}
+
+.text2 {
+	min-height: 50px;
+	width: 70%;
+	margin-top: auto;
+	margin-left: 0px;
+}
+
+submitButton {
+	margin-top:0px;
+}
+
+
+#topbar {
+	
+}
+
+#profile_line {
+	border-color:rgba(0,0,0,.1);
+
+}
+.center {
+	text-align: center;
+}
+
+.ProfileBox {
+	width: 200px;
+	height: 200px;
+	border-radius:100px;
+	margin:auto;
+    overflow: hidden;
+
+}
+
+.img{
+	display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    border-radius:5px;
+}
+
+.logo {
+	margin-top:5px; 
+	margin-bottom:5px; 
+	max-height: 50px; 
+	max-width: 50px;
+}

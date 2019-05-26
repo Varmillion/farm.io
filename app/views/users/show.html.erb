@@ -1,0 +1,29 @@
+<h1 class="center" style="text-transform: uppercase"> <%= @user.user_name %> </h1> 
+
+<div class="container center">
+  <div class="ProfileBox">
+    <% if current_user == @user %>
+      <%= link_to (image_tag @user.avatar.url(:thumb), class: "ProfileBox img"), edit_user_registration_path %>
+    <% else %>
+      <%= image_tag @user.avatar.url(:medium), class: "ProfileBox img" %>
+    <% end %>
+  </div>
+</div>
+<br>
+<p class="center"> <%= @user.email %></p>
+
+<hr id="profile_line">
+<h2 STYLE="font-size:16px; text-align: center;"> POSTS BY USER </h2>
+<div id="ads" class="transitions-enabled">
+<% @user_ads.each do |ad| %>
+  <div class="box panel panel-default">
+    <%= link_to (image_tag ad.image.url), ad %>
+   	<div class="panel-body">
+      <%h2= link_to ad.title, ad %>
+      <p>
+        Submitted by <%= ad.user.user_name %>
+      </p>
+    </div>
+    </div>
+<% end %>
+</div>

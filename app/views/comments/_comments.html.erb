@@ -1,0 +1,16 @@
+<% @comments.each do |comment| %>
+<p><b>
+	<%= link_to (image_tag(comment.user.avatar.url(:thumb), class: "img-circle logo")), user_path(comment.user) %> 
+	<%= link_to (comment.user.user_name), user_path(comment.user) %> 
+</b> 
+	<%= comment.content %> 
+<% if current_user == comment.user %>
+<%= link_to icon('pencil'), edit_ad_comment_path(comment.ad, comment), style:"padding-left:10px;" %>
+<%= link_to icon('trash'), [comment.ad, comment], method: :delete %>
+<% end %>
+<% end %>
+
+</p>
+<% if user_signed_in? %>
+<%= render 'comments/form' %>
+<% end %>

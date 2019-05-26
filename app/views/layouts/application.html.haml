@@ -1,0 +1,31 @@
+!!! 5
+%html
+%head
+ %title farmio
+ = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+ = javascript_include_tag 'application', 'data-turbolinks-track' => true
+ = csrf_meta_tags
+
+%body
+ %nav.navbar.navbar-default
+  .container#topbar
+   -if user_signed_in?
+    = link_to (image_tag (current_user.avatar.url(:thumb)), class: "img-circle logo"), current_user
+   -else
+    = link_to (image_tag "logo.png", class: "logo"), root_path
+ 
+   .navbar-brand= link_to "farmio", root_path
+
+   - if user_signed_in?
+    %ul.nav.navbar-nav.navbar-right
+     %li= link_to (fa_icon"plus", class: "fa-2x fa-fw"), new_ad_path
+     %li= link_to (fa_icon'cog', class: 'fa-2x fa-fw'), edit_user_registration_path
+     %li= link_to (fa_icon'sign-out', class: 'fa-2x fa-fw'), destroy_user_session_path, method: :delete
+   - else
+    %ul.nav.navbar-nav.navbar-right
+     %li= link_to (fa_icon'user-plus', class: 'fa-2x fa-fw') , new_user_registration_path
+     %li= link_to (fa_icon'sign-in', class: ' fa-2x fa-fw'), new_user_session_path
+ .container 
+  - flash.each do |name, msg |
+   =content_tag :div,msg, class: "alert alert-info"
+  = yield 

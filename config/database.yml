@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: farm_io_development
+
+test:
+  <<: *default
+  database: farm_io_test
+
+production:
+  <<: *default
+  database: farm_io_production
+  username: farm_io
+  password: <%= ENV['FARM_IO_DATABASE_PASSWORD'] %>
+

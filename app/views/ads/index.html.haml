@@ -1,0 +1,10 @@
+#ads.transitions-enabled
+ - @ads.each do |ad|
+  .box.panel.panel-default
+   = link_to (image_tag ad.image.url), ad
+   .panel-body
+    %h2= link_to ad.title, ad
+    = link_to (image_tag(ad.user.avatar.url(:thumb), class: "img-circle logo", style: "margin-top:0px;")), user_path(ad.user)
+    %p.user
+    by
+    =link_to ( ad.user.user_name ), user_path(ad.user)

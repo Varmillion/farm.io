@@ -1,0 +1,29 @@
+#ad_show.row
+  .col-md-8.col-md-offset-2
+    .panel.panel-default
+      .panel-heading.ad_image
+        = image_tag @ad.image.url
+      .panel-body
+        %h1= @ad.title
+        %p.location= @ad.location
+        ₹
+        %h2.description= @ad.price
+        = @ad.size
+        sqmt
+        %p 
+        Submitted by 
+        =link_to (@ad.user.user_name), user_path
+      .panel-footer
+        .row
+          .col-md-6
+            %p.user
+          .col-md-6
+            .btn-group.pull-right
+              - if user_signed_in?
+                - if current_user == @ad.user
+                  = link_to (fa_icon'pencil', class:'fa-2x'), edit_ad_path, class: "btn btn-default"
+                  = link_to (fa_icon'trash', class:'fa-2x'), ad_path, method: :delete, data: { confirm: "are you Sure?" }, class: "btn btn-default"
+                = link_to (fa_icon'heart', class:'fa-2x'), @ad.unvote, class: "btn btn-default"
+                / = @ad.votes_for
+
+  
